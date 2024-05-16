@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./libs/images/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./libs/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./libs/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./libs/images/favicon_io/site.webmanifest">
+    <!-- Jquery -->
+    <script src="./libs/dist/jquery.min.js"></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="./libs/dist/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./libs/dist/leaflet.css">
+    <link rel="stylesheet" href="libs/dist/css/leaflet.extra-markers.min.css">
+    <link rel="stylesheet" href="libs/css/MarkerCluster.css">
+    <link rel="stylesheet" href="libs/css/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="./libs/css/easy-button.css">
+    <!-- My Styles -->
+    <link rel="stylesheet" href="./libs/css/index.css">
+    <title>Gazetteer</title>
+</head>
+<body>
+    <!-- Spinner/Loader -->
+    <div class="loader-container">
+        <div class="spinner-border text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Countries Options -->
+    <span id="selectContainer">
+        <select id="countrySelect" class="form-select shadow-sm">
+            <option value="" selected disabled hidden>Choose a country</option>
+        </select>
+    </span>
+
+    <!-- Initializing Map -->
+    <div id="map"></div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade country-modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content country"></div>
+        </div>
+    </div>
+
+    <div class="modal fade weather-modal modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content weather"></div>
+        </div>
+    </div>
+
+    <!-- Currency Modal -->
+    <div class="modal fade currency-modal modal-sm" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content currency">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5" id="staticBackdropLabel">Exchange Rate <i class="fa-solid fa-sack-dollar"></i> </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" type="number" id="amount" min="1" value="1" max="10000000" step="1" placeholder="enter some amount">
+                                <label for="amount">US Dollar</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                  <input class="form-control" type="text" id="exchange" min="1" value="1" max="10000000" step="1" disabled>
+                                  <label for="exchange" id="exchange-label"></label>
+                            </div>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./libs/dist/leaflet.js"></script>
+    <script src="libs/dist/js/leaflet.extra-markers.min.js"></script>
+    <script src="libs/dist/leaflet.markercluster.js"></script>
+    <script src="./libs/dist/bootstrapPopper.min.js"></script>
+    <script src="./libs/dist/bootstrap.min.js"></script>
+    <script src="./libs/dist/easy-button.js"></script>
+    <script src="./libs/dist/chart.js"></script>
+    <script src="./libs/dist/numeral.min.js"></script>
+    <!-- My Script -->
+    <script src="./libs/js/main.js"></script>
+</body>
+</html>
